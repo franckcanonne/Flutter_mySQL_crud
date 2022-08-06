@@ -53,7 +53,7 @@ class _EditState extends State<Edit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit"),
+        title: Text("Modifier"),
       ),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(

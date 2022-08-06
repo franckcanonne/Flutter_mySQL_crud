@@ -44,7 +44,7 @@ class _CreateState extends State<Create> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Create"),
+        title: Text("Ajout"),
       ),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(

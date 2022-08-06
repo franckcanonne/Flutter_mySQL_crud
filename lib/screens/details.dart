@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import './edit.dart';
 import '../env.dart';
 import '../models/student.dart';
-import './edit.dart';
 
 class Details extends StatefulWidget {
   final Student student;
@@ -56,7 +56,7 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Details'),
+        title: Text('Détails'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.delete),
