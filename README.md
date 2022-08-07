@@ -1,6 +1,10 @@
 # crud_ok
+Flutter with CRUD PHP/JSON/MySQL
 
-CRUD with PHP
+#Author
+Franck Canonne
+franck.canonne@gmail.com
+https://factotum.bzh
 
 ## Getting Started
 
