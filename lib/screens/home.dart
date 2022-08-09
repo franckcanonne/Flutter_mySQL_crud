@@ -27,7 +27,7 @@ class HomeState extends State<Home> {
   }
 
   Future<List<Student>> getStudentList() async {
-    final response = await http.get("${Env.URL_PREFIX}/list.php");
+    final response = await http.get(Uri.parse("${Env.URL_PREFIX}/list.php"));
 
     final items = json.decode(response.body).cast<Map<String, dynamic>>();
     List<Student> students = items.map<Student>((json) {

@@ -24,7 +24,7 @@ class _CreateState extends State<Create> {
   // Http post request to create new data
   Future _createStudent() async {
     return await http.post(
-      "${Env.URL_PREFIX}/create.php",
+      Uri.parse("${Env.URL_PREFIX}/create.php"),
       body: {
         "name": nameController.text,
         "age": ageController.text,

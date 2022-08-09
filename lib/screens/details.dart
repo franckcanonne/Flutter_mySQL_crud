@@ -17,7 +17,7 @@ class Details extends StatefulWidget {
 class _DetailsState extends State<Details> {
   void deleteStudent(context) async {
     await http.post(
-      "${Env.URL_PREFIX}/delete.php",
+      Uri.parse("${Env.URL_PREFIX}/delete.php"),
       body: {
         'id': widget.student.id.toString(),
       },

@@ -25,7 +25,7 @@ class _EditState extends State<Edit> {
   // Http post request to update data
   Future editStudent() async {
     return await http.post(
-      "${Env.URL_PREFIX}/update.php",
+      Uri.parse("${Env.URL_PREFIX}/update.php"),
       body: {
         "id": widget.student.id.toString(),
         "name": nameController.text,
