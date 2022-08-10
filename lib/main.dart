@@ -12,7 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter + PHP CRUD',
+      title: 'Liste de courses',
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),
