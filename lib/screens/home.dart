@@ -48,7 +48,7 @@ class HomeState extends State<Home> {
     return Scaffold(
       key: studentListKey,
       appBar: AppBar(
-        title: Text('Liste'),
+        title: Text('Liste courses'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.refresh),
