@@ -49,8 +49,8 @@ class _CreateState extends State<Create> {
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
           child: Text("Confirmer"),
-          color: Color.fromARGB(255, 33, 72, 243),
-          textColor: Colors.white,
+          color: Color.fromARGB(255, 0, 255, 0),
+          textColor: Colors.black,
           onPressed: () {
             if (formKey.currentState.validate()) {
               _onConfirm(context);
