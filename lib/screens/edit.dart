@@ -57,8 +57,8 @@ class _EditState extends State<Edit> {
       ),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
-          child: Text('CONFIRM'),
-          color: Colors.blue,
+          child: Text('Confirmer'),
+          color: Color.fromARGB(255, 33, 72, 243),
           textColor: Colors.white,
           onPressed: () {
             _onConfirm(context);
