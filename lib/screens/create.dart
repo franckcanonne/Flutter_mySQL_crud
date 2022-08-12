@@ -24,7 +24,7 @@ class _CreateState extends State<Create> {
   // Http post request to create new data
   Future _createStudent() async {
     return await http.post(
-      "${Env.URL_PREFIX}/create.php",
+      Uri.parse("${Env.URL_PREFIX}/create.php"),
       body: {
         "name": nameController.text,
         "age": ageController.text,
@@ -44,12 +44,12 @@ class _CreateState extends State<Create> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Create"),
+        title: Text("Ajout"),
       ),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
-          child: Text("CONFIRM"),
-          color: Colors.blue,
+          child: Text("Confirmer"),
+          color: Color.fromARGB(255, 33, 72, 243),
           textColor: Colors.white,
           onPressed: () {
             if (formKey.currentState.validate()) {

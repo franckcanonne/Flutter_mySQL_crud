@@ -1,6 +1,7 @@
-# CRUD Flutter avec PHP
-
-CRUD with PHP
+#Author
+Franck Canonne
+franck.canonne@gmail.com
+https://factotum.bzh
 
 ## Getting Started
 

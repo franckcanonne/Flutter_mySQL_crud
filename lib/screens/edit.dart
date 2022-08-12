@@ -25,7 +25,7 @@ class _EditState extends State<Edit> {
   // Http post request to update data
   Future editStudent() async {
     return await http.post(
-      "${Env.URL_PREFIX}/update.php",
+      Uri.parse("${Env.URL_PREFIX}/update.php"),
       body: {
         "id": widget.student.id.toString(),
         "name": nameController.text,
@@ -53,12 +53,12 @@ class _EditState extends State<Edit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit"),
+        title: Text("Modifier"),
       ),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
-          child: Text('CONFIRM'),
-          color: Colors.blue,
+          child: Text('Confirmer'),
+          color: Color.fromARGB(255, 33, 72, 243),
           textColor: Colors.white,
           onPressed: () {
             _onConfirm(context);

@@ -11,7 +11,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter + PHP CRUD',
+      debugShowCheckedModeBanner: false,
+      title: 'Liste de courses',
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),

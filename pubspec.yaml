@@ -1,4 +1,4 @@
-name: flutter_php
+name: courses
 description: Very simple and straightforward example of CRUD(Create, Read, Update, Delete) using Flutter & PHP
 
 # The following defines the version and build number for your application.
@@ -19,13 +19,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  http: 0.12.0
+  http: ^0.12.0
+  #http: ^0.13.2
+  #http_parser: ^4.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
 
