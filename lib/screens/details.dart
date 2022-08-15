@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 import './edit.dart';
 import '../env.dart';
-import '../models/student.dart';
+import '../models/achats.dart';
 
 class Details extends StatefulWidget {
   final Student student;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import '../env.dart';
-import '../models/student.dart';
+import '../models/achats.dart';
 import '../widgets/form.dart';
 
 class Edit extends StatefulWidget {
