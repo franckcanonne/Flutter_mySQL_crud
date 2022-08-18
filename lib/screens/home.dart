@@ -17,7 +17,7 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  Future<List<Student>> students;
+  Future<List<Course>> students;
   final studentListKey = GlobalKey<HomeState>();
 
   @override
@@ -26,12 +26,12 @@ class HomeState extends State<Home> {
     students = getStudentList();
   }
 
-  Future<List<Student>> getStudentList() async {
+  Future<List<Course>> getStudentList() async {
     final response = await http.get(Uri.parse("${Env.URL_PREFIX}/list.php"));
 
     final items = json.decode(response.body).cast<Map<String, dynamic>>();
-    List<Student> students = items.map<Student>((json) {
-      return Student.fromJson(json);
+    List<Course> students = items.map<Course>((json) {
+      return Course.fromJson(json);
     }).toList();
 
     return students;
@@ -59,7 +59,7 @@ class HomeState extends State<Home> {
         ],
       ),
       body: Center(
-        child: FutureBuilder<List<Student>>(
+        child: FutureBuilder<List<Course>>(
           future: students,
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             // By default, show a loading spinner.

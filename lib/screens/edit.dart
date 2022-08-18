@@ -6,7 +6,7 @@ import '../models/achats.dart';
 import '../widgets/form.dart';
 
 class Edit extends StatefulWidget {
-  final Student student;
+  final Course student;
 
   Edit({this.student});
 
