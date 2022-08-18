@@ -6,20 +6,20 @@ import '../env.dart';
 import '../models/achats.dart';
 
 class Details extends StatefulWidget {
-  final Course student;
+  final Course course;
 
-  Details({this.student});
+  Details({this.course});
 
   @override
   _DetailsState createState() => _DetailsState();
 }
 
 class _DetailsState extends State<Details> {
-  void deleteStudent(context) async {
+  void deleteCourse(context) async {
     await http.post(
       Uri.parse("${Env.URL_PREFIX}/delete.php"),
       body: {
-        'id': widget.student.id.toString(),
+        'id': widget.course.id.toString(),
       },
     );
     // Navigator.pop(context);
@@ -44,7 +44,7 @@ class _DetailsState extends State<Details> {
               child: Icon(Icons.check_circle),
               color: Colors.blue,
               textColor: Colors.white,
-              onPressed: () => deleteStudent(context),
+              onPressed: () => deleteCourse(context),
             ),
           ],
         );
@@ -71,14 +71,14 @@ class _DetailsState extends State<Details> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              "Name : ${widget.student.name}",
+              "Name : ${widget.course.name}",
               style: TextStyle(fontSize: 20),
             ),
             Padding(
               padding: EdgeInsets.all(10),
             ),
             Text(
-              "Age : ${widget.student.age}",
+              "Age : ${widget.course.age}",
               style: TextStyle(fontSize: 20),
             ),
           ],
@@ -88,7 +88,7 @@ class _DetailsState extends State<Details> {
         child: Icon(Icons.edit),
         onPressed: () => Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (BuildContext context) => Edit(student: widget.student),
+            builder: (BuildContext context) => Edit(course: widget.course),
           ),
         ),
       ),

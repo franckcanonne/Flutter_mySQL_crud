@@ -17,29 +17,29 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  Future<List<Course>> students;
+  Future<List<Course>> courses;
   final studentListKey = GlobalKey<HomeState>();
 
   @override
   void initState() {
     super.initState();
-    students = getStudentList();
+    courses = getStudentList();
   }
 
   Future<List<Course>> getStudentList() async {
     final response = await http.get(Uri.parse("${Env.URL_PREFIX}/list.php"));
 
     final items = json.decode(response.body).cast<Map<String, dynamic>>();
-    List<Course> students = items.map<Course>((json) {
+    List<Course> courses = items.map<Course>((json) {
       return Course.fromJson(json);
     }).toList();
 
-    return students;
+    return courses;
   }
 
-  void refreshStudentList() {
+  void refreshCourseList() {
     setState(() {
-      students = getStudentList();
+      courses = getStudentList();
     });
   }
 
@@ -53,19 +53,19 @@ class HomeState extends State<Home> {
           IconButton(
             icon: Icon(Icons.refresh),
             onPressed: () {
-              refreshStudentList();
+              refreshCourseList();
             },
           )
         ],
       ),
       body: Center(
         child: FutureBuilder<List<Course>>(
-          future: students,
+          future: courses,
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             // By default, show a loading spinner.
             if (!snapshot.hasData) return CircularProgressIndicator();
 
-            // Render student lists
+            // Render course lists
             return ListView.builder(
               itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context, int index) {
@@ -83,7 +83,7 @@ class HomeState extends State<Home> {
                         context,
                         EnterExitRoute(
                           exitPage: Home(),
-                          enterPage: Details(student: data),
+                          enterPage: Details(course: data),
                         ),
                       );
                     },
