@@ -1,12 +1,12 @@
-class Student {
+class Achat {
   final int id;
   final String name;
   final int age;
 
-  Student({this.id, this.name, this.age});
+  Achat({this.id, this.name, this.age});
 
-  factory Student.fromJson(Map<String, dynamic> json) {
-    return Student(
+  factory Achat.fromJson(Map<String, dynamic> json) {
+    return Achat(
       id: json['id'],
       name: json['name'],
       age: json['age'],
@@ -14,7 +14,7 @@ class Student {
   }
 
   Map<String, dynamic> toJson() => {
-    'name': name,
-    'age': age,
-  };
+        'name': name,
+        'age': age,
+      };
 }

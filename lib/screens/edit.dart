@@ -6,9 +6,9 @@ import '../models/achats.dart';
 import '../widgets/form.dart';
 
 class Edit extends StatefulWidget {
-  final Student student;
+  final Achat achat;
 
-  Edit({this.student});
+  Edit({this.achat});
 
   @override
   _EditState createState() => _EditState();
@@ -23,11 +23,11 @@ class _EditState extends State<Edit> {
   TextEditingController ageController;
 
   // Http post request to update data
-  Future editStudent() async {
+  Future editAchat() async {
     return await http.post(
       Uri.parse("${Env.URL_PREFIX}/update.php"),
       body: {
-        "id": widget.student.id.toString(),
+        "id": widget.achat.id.toString(),
         "name": nameController.text,
         "age": ageController.text
       },
@@ -35,7 +35,7 @@ class _EditState extends State<Edit> {
   }
 
   void _onConfirm(context) async {
-    await editStudent();
+    await editAchat();
 
     // Remove all existing routes until the Home.dart, then rebuild Home.
     Navigator.of(context)
@@ -44,8 +44,8 @@ class _EditState extends State<Edit> {
 
   @override
   void initState() {
-    nameController = TextEditingController(text: widget.student.name);
-    ageController = TextEditingController(text: widget.student.age.toString());
+    nameController = TextEditingController(text: widget.achat.name);
+    ageController = TextEditingController(text: widget.achat.age.toString());
     super.initState();
   }
 

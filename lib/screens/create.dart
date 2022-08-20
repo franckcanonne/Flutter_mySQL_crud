@@ -5,9 +5,9 @@ import '../env.dart';
 import '../widgets/form.dart';
 
 class Create extends StatefulWidget {
-  final Function refreshStudentList;
+  final Function refreshAchatList;
 
-  Create({this.refreshStudentList});
+  Create({this.refreshAchatList});
 
   @override
   _CreateState createState() => _CreateState();
@@ -22,7 +22,7 @@ class _CreateState extends State<Create> {
   TextEditingController ageController = new TextEditingController();
 
   // Http post request to create new data
-  Future _createStudent() async {
+  Future _createAchat() async {
     return await http.post(
       Uri.parse("${Env.URL_PREFIX}/create.php"),
       body: {
@@ -33,7 +33,7 @@ class _CreateState extends State<Create> {
   }
 
   void _onConfirm(context) async {
-    await _createStudent();
+    await _createAchat();
 
     // Remove all existing routes until the Home.dart, then rebuild Home.
     Navigator.of(context)

@@ -17,29 +17,29 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  Future<List<Student>> students;
+  Future<List<Achat>> achats;
   final studentListKey = GlobalKey<HomeState>();
 
   @override
   void initState() {
     super.initState();
-    students = getStudentList();
+    achats = getAchatList();
   }
 
-  Future<List<Student>> getStudentList() async {
+  Future<List<Achat>> getAchatList() async {
     final response = await http.get(Uri.parse("${Env.URL_PREFIX}/list.php"));
 
     final items = json.decode(response.body).cast<Map<String, dynamic>>();
-    List<Student> students = items.map<Student>((json) {
-      return Student.fromJson(json);
+    List<Achat> achats = items.map<Achat>((json) {
+      return Achat.fromJson(json);
     }).toList();
 
-    return students;
+    return achats;
   }
 
   void refreshStudentList() {
     setState(() {
-      students = getStudentList();
+      achats = getAchatList();
     });
   }
 
@@ -59,8 +59,8 @@ class HomeState extends State<Home> {
         ],
       ),
       body: Center(
-        child: FutureBuilder<List<Student>>(
-          future: students,
+        child: FutureBuilder<List<Achat>>(
+          future: achats,
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             // By default, show a loading spinner.
             if (!snapshot.hasData) return CircularProgressIndicator();
@@ -83,7 +83,7 @@ class HomeState extends State<Home> {
                         context,
                         EnterExitRoute(
                           exitPage: Home(),
-                          enterPage: Details(student: data),
+                          enterPage: Details(achat: data),
                         ),
                       );
                     },
