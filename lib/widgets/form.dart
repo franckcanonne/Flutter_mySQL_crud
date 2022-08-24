@@ -16,14 +16,14 @@ class AppForm extends StatefulWidget {
 
 class _AppFormState extends State<AppForm> {
   String _validateName(String value) {
-    if (value.length < 3) return 'Name must be more than 2 charater';
+    if (value.length < 3) return 'Au moins deux caractères pour le produit';
     return null;
   }
 
   String _validateAge(String value) {
     Pattern pattern = r'(?<=\s|^)\d+(?=\s|$)';
-    RegExp regex = new RegExp(pattern);
-    if (!regex.hasMatch(value)) return 'Age must be a number';
+    RegExp regex = RegExp(pattern);
+    if (!regex.hasMatch(value)) return 'Qte. doit etre un nombre';
     return null;
   }
 
@@ -37,13 +37,13 @@ class _AppFormState extends State<AppForm> {
           TextFormField(
             controller: widget.nameController,
             keyboardType: TextInputType.text,
-            decoration: InputDecoration(labelText: 'Name'),
+            decoration: InputDecoration(labelText: 'Produit'),
             validator: _validateName,
           ),
           TextFormField(
             controller: widget.ageController,
             keyboardType: TextInputType.number,
-            decoration: InputDecoration(labelText: 'Age'),
+            decoration: InputDecoration(labelText: 'Quantite'),
             validator: _validateAge,
           ),
         ],

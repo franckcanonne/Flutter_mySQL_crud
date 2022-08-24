@@ -32,7 +32,7 @@ class _DetailsState extends State<Details> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          content: Text('Are you sure you want to delete this?'),
+          content: Text('Etes-vous sur de vouloir supprimer cet article ?'),
           actions: <Widget>[
             RaisedButton(
               child: Icon(Icons.cancel),
@@ -71,14 +71,14 @@ class _DetailsState extends State<Details> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              "Name : ${widget.achat.name}",
+              "Produit : ${widget.achat.name}",
               style: TextStyle(fontSize: 20),
             ),
             Padding(
               padding: EdgeInsets.all(10),
             ),
             Text(
-              "Age : ${widget.achat.age}",
+              "Quentité : ${widget.achat.age}",
               style: TextStyle(fontSize: 20),
             ),
           ],

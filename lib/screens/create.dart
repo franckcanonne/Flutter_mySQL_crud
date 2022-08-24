@@ -18,8 +18,8 @@ class _CreateState extends State<Create> {
   final formKey = GlobalKey<FormState>();
 
   // Handles text onchange
-  TextEditingController nameController = new TextEditingController();
-  TextEditingController ageController = new TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController ageController = TextEditingController();
 
   // Http post request to create new data
   Future _createAchat() async {
