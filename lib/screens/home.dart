@@ -48,10 +48,10 @@ class HomeState extends State<Home> {
     return Scaffold(
       key: studentListKey,
       appBar: AppBar(
-        title: Text('Liste courses'),
+        title: const Text('Liste courses'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.refresh),
+            icon: const Icon(Icons.refresh),
             onPressed: () {
               refreshStudentList();
             },
@@ -63,7 +63,7 @@ class HomeState extends State<Home> {
           future: achats,
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             // By default, show a loading spinner.
-            if (!snapshot.hasData) return CircularProgressIndicator();
+            if (!snapshot.hasData) return const CircularProgressIndicator();
 
             // Render student lists
             return ListView.builder(
@@ -72,11 +72,11 @@ class HomeState extends State<Home> {
                 var data = snapshot.data[index];
                 return Card(
                   child: ListTile(
-                    leading: Icon(Icons.person),
-                    trailing: Icon(Icons.view_list),
+                    leading: const Icon(Icons.person),
+                    trailing: const Icon(Icons.view_list),
                     title: Text(
                       data.name,
-                      style: TextStyle(fontSize: 20),
+                      style: const TextStyle(fontSize: 20),
                     ),
                     onTap: () {
                       Navigator.push(
@@ -95,7 +95,7 @@ class HomeState extends State<Home> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (_) {
             return Create();
