@@ -53,12 +53,12 @@ class _EditState extends State<Edit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Modifier"),
+        title: const Text("Modifier"),
       ),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
           child: Text('Confirmer'),
-          color: Color.fromARGB(255, 0, 255, 0),
+          color: const Color.fromARGB(255, 0, 255, 0),
           textColor: Colors.black,
           onPressed: () {
             _onConfirm(context);
@@ -67,10 +67,10 @@ class _EditState extends State<Edit> {
       ),
       body: Container(
         height: double.infinity,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Center(
           child: Padding(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             child: AppForm(
               formKey: formKey,
               nameController: nameController,

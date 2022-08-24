@@ -32,7 +32,8 @@ class _DetailsState extends State<Details> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          content: Text('Etes-vous sur de vouloir supprimer cet article ?'),
+          content:
+              const Text('Etes-vous sur de vouloir supprimer cet article ?'),
           actions: <Widget>[
             RaisedButton(
               child: Icon(Icons.cancel),
@@ -56,10 +57,10 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Détails'),
+        title: const Text('Détails'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
             onPressed: () => confirmDelete(context),
           ),
         ],
@@ -72,20 +73,20 @@ class _DetailsState extends State<Details> {
           children: <Widget>[
             Text(
               "Produit : ${widget.achat.name}",
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
             ),
             Text(
               "Quentité : ${widget.achat.age}",
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.edit),
+        child: const Icon(Icons.edit),
         onPressed: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (BuildContext context) => Edit(achat: widget.achat),
