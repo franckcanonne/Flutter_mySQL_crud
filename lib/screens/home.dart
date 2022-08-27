@@ -10,7 +10,7 @@ import '../models/achats.dart';
 import '../page_transitions.dart';
 
 class Home extends StatefulWidget {
-  Home({Key key}) : super(key: key);
+  const Home({Key key}) : super(key: key);
 
   @override
   HomeState createState() => HomeState();
