@@ -82,7 +82,7 @@ class HomeState extends State<Home> {
                       Navigator.push(
                         context,
                         EnterExitRoute(
-                          exitPage: Home(),
+                          exitPage: const Home(),
                           enterPage: Details(achat: data),
                         ),
                       );
