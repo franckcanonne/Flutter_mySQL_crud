@@ -44,12 +44,12 @@ class _CreateState extends State<Create> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Ajout"),
+        title: const Text("Ajout"),
       ),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
           child: Text("Confirmer"),
-          color: Color.fromARGB(255, 0, 255, 0),
+          color: const Color.fromARGB(255, 0, 255, 0),
           textColor: Colors.black,
           onPressed: () {
             if (formKey.currentState.validate()) {
@@ -60,10 +60,10 @@ class _CreateState extends State<Create> {
       ),
       body: Container(
         height: double.infinity,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Center(
           child: Padding(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             child: AppForm(
               formKey: formKey,
               nameController: nameController,
