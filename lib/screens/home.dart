@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import './create.dart';
 import './details.dart';
 import '../env.dart';
-import '../models/achats.dart';
+import '../models/produit.dart';
 import '../page_transitions.dart';
 
 class Home extends StatefulWidget {
