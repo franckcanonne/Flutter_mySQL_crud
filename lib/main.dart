@@ -15,7 +15,7 @@ class App extends StatelessWidget {
       title: 'Liste de courses',
       initialRoute: '/',
       routes: {
-        '/': (context) => Home(),
+        '/': (context) => const Home(),
         '/create': (context) => Create(),
         '/details': (context) => Details(),
         '/edit': (context) => Edit(),
