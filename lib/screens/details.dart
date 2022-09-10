@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -8,7 +10,8 @@ import '../models/produit.dart';
 class Details extends StatefulWidget {
   final Achat achat;
 
-  Details({this.achat});
+  // ignore: prefer_const_constructors_in_immutables
+  Details({Key key, this.achat}) : super(key: key);
 
   @override
   _DetailsState createState() => _DetailsState();
@@ -35,17 +38,21 @@ class _DetailsState extends State<Details> {
           content:
               const Text('Etes-vous sur de vouloir supprimer cet article ?'),
           actions: <Widget>[
-            RaisedButton(
-              child: Icon(Icons.cancel),
-              color: Colors.red,
-              textColor: Colors.white,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red, // background
+                onPrimary: Colors.white, // foreground
+              ),
               onPressed: () => Navigator.of(context).pop(),
+              child: const Icon(Icons.cancel),
             ),
-            RaisedButton(
-              child: Icon(Icons.check_circle),
-              color: Colors.blue,
-              textColor: Colors.white,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue, // background
+                onPrimary: Colors.white, // foreground
+              ),
               onPressed: () => deleteAchat(context),
+              child: const Icon(Icons.check_circle),
             ),
           ],
         );
@@ -75,8 +82,8 @@ class _DetailsState extends State<Details> {
               "Produit : ${widget.achat.name}",
               style: const TextStyle(fontSize: 20),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10),
+            const Padding(
+              padding: EdgeInsets.all(10),
             ),
             Text(
               "Quentité : ${widget.achat.age}",
