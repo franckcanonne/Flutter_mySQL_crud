@@ -47,15 +47,15 @@ class _CreateState extends State<Create> {
         title: const Text("Ajout"),
       ),
       bottomNavigationBar: BottomAppBar(
-        child: RaisedButton(
-          child: Text("Confirmer"),
-          color: const Color.fromARGB(255, 0, 255, 0),
-          textColor: Colors.black,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: Color.fromARGB(255, 0, 255, 8), // background
+            onPrimary: Colors.black, // foreground
+          ),
           onPressed: () {
-            if (formKey.currentState.validate()) {
-              _onConfirm(context);
-            }
+            _onConfirm(context);
           },
+          child: const Text('Confirmer'),
         ),
       ),
       body: Container(

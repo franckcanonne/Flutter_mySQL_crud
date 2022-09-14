@@ -56,13 +56,15 @@ class _EditState extends State<Edit> {
         title: const Text("Modifier"),
       ),
       bottomNavigationBar: BottomAppBar(
-        child: RaisedButton(
-          child: Text('Confirmer'),
-          color: const Color.fromARGB(255, 0, 255, 0),
-          textColor: Colors.black,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: Color.fromARGB(255, 0, 255, 8), // background
+            onPrimary: Colors.black, // foreground
+          ),
           onPressed: () {
             _onConfirm(context);
           },
+          child: const Text('Confirmer'),
         ),
       ),
       body: Container(

@@ -58,7 +58,13 @@ class HomeState extends State<Home> {
           )
         ],
       ),
-      body: Center(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/fond.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: FutureBuilder<List<Achat>>(
           future: achats,
           builder: (BuildContext context, AsyncSnapshot snapshot) {
