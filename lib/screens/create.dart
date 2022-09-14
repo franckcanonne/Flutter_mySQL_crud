@@ -49,7 +49,7 @@ class _CreateState extends State<Create> {
       bottomNavigationBar: BottomAppBar(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            primary: Color.fromARGB(255, 0, 255, 8), // background
+            primary: const Color.fromARGB(255, 0, 255, 8), // background
             onPrimary: Colors.black, // foreground
           ),
           onPressed: () {
