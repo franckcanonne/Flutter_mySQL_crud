@@ -69,7 +69,8 @@ class HomeState extends State<Home> {
           future: achats,
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             // By default, show a loading spinner.
-            //if (!snapshot.hasData) return const CircularProgressIndicator();
+            if (!snapshot.hasData) return const CircularProgressIndicator();
+            // Franck.
 
             // Render student lists
             return ListView.builder(
